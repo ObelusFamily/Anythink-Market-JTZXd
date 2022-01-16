@@ -8,6 +8,8 @@ development:
   <<: *default
   encoding: unicode
   pool: 5
+  database: anythink-market
+
 
 test:
   <<: *default
