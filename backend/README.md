@@ -4,6 +4,8 @@ The Anythink Market backend is Ruby web app written with [Ruby On Rails](https:/
 
 ## Getting started
 
+Make sure you have all the dependancies and that you've run `bundle install` before starting.
+
 To start the app use: `./start.sh` from the backend directory.
 
 Make sure your DB is up and running.
