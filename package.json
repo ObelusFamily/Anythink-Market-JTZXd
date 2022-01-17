@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "concurrently --kill-others \"cd frontend && ./start.sh\" \"cd backend && ./start.sh\"",
-    "seeds": "concurrently \"cd backend && ./seeds.sh\""
+    "seeds": "cd backend && ./seeds.sh"
   },
   "keywords": [],
   "author": "Wilco Inc.",
