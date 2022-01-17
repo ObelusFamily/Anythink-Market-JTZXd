@@ -1,4 +1,4 @@
-require_relative './seeds/user_seeding'
+require_relative './seeds/seeding'
 
 puts "Seeding users..."
 seed_users

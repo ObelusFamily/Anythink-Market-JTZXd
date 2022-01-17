@@ -31,7 +31,7 @@ def seed_items
       image: row[3],
       user_id: row[4]
     }
-    Item.create!(item_information)
+    Item.create(item_information)
   end
   puts "Seeding items from #{csv_file_path} done."
 end
