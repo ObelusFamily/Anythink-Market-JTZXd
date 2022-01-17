@@ -29,11 +29,10 @@ const ItemPreview = (props) => {
     }
   };
 
-  const setFallbackImage = (ev) => 
-  { 
-    ev.target.src = 'placeholder.png'; 
+  const setFallbackImage = (ev) => {
+    ev.target.src = "placeholder.png";
     ev.target.onError = null;
-  }
+  };
 
   return (
     <div
