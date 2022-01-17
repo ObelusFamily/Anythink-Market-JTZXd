@@ -1,20 +1,31 @@
 require 'csv'
 
-def seed_users
-    csv_file_path = Rails.root.join('db', 'seeds', 'data', 'users.csv').to_s
-    puts "Seeding users from #{csv_file_path}..."
-    file = File.new(csv_file_path, 'r')
-    csv = CSV.new(file)
+# def seed_users
+#     csv_file_path = Rails.root.join('db', 'seeds', 'data', 'users.csv').to_s
+#     puts "Seeding users from #{csv_file_path}..."
+#     file = File.new(csv_file_path, 'r')
+#     csv = CSV.new(file)
   
-  csv.each do |row|
+#   csv.each do |row|
+#     user_information = {
+#       username: row[0],
+#       email: row[1],
+#       password: row[2]
+#     }
+#     User.create(user_information)
+#   end
+#   puts "Seeding users from #{csv_file_path} done."
+# end
+
+def seed_users
+  for i in 1..110 do
     user_information = {
-      username: row[0],
-      email: row[1],
-      password: row[2]
+      username: "fake#{i}",
+      email: "fake#{i}@fake.com",
+      password: SecureRandom.hex
     }
     User.create(user_information)
   end
-  puts "Seeding users from #{csv_file_path} done."
 end
 
 def seed_items
