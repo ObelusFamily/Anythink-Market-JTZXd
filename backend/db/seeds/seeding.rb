@@ -59,3 +59,14 @@ def seed_items
     Item.create(item_information)
   end
 end
+
+def seed_comments
+  for i in 1..110 do
+    comment_information = {
+      body: "This is a comment bla bla",
+      user_id: rand(1..110),
+      item_id: rand(1..110)
+    }
+    Comment.create(comment_information)
+  end
+end

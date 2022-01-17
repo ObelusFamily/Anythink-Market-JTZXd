@@ -6,4 +6,7 @@ seed_users
 puts "Seeding items..."
 seed_items
 
+puts "Seeding comments..."
+seed_comments
+
 puts "Finish "
