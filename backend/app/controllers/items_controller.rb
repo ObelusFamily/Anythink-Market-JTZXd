@@ -2,7 +2,7 @@
 
 class ItemsSerializer < Jserializer::Base
   attributes :title, :slug, :description, :image, :created_at, :updated_at, :tag_list, :favorites_count
-
+  
   def image
     object.image || "placeholder.png"
   end
@@ -46,7 +46,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find_by!(slug: params[:slug])
-    serializer = ItemsSerializer.new(@item)
+    #puts ItemsSerializer.new(@item)
+    serializer = ::ItemsSerializer.new(@item)
     render json: { item: serializer.serializable_hash }
   end
 
