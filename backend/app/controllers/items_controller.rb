@@ -46,8 +46,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find_by!(slug: params[:slug])
-    #puts ItemsSerializer.new(@item)
-    serializer = ::ItemsSerializer.new(@item)
+    serializer = ItemsSerializer.new(@item)
     render json: { item: serializer.serializable_hash }
   end
 
