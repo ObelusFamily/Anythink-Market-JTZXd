@@ -1,5 +1,13 @@
 # frozen_string_literal: true
 
+class ItemsSerializer < Jserializer::Base
+  attributes :title, :slug, :description, :image, :created_at, :updated_at, :tag_list, :favorites_count
+
+  def image
+    object.image || "placeholder.png"
+  end
+end
+
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
 
@@ -38,6 +46,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find_by!(slug: params[:slug])
+    serializer = ItemsSerializer.new(@item)
+    render json: { item: serializer.serializable_hash }
   end
 
   def update
